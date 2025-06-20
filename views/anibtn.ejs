@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon Phases Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .menu-item {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+            transform-origin: center;
+            clip-path: circle(50%);
+            color: white;
+        }
+
+        .menu:hover .menu-item {
+            opacity: 1;
+            transform: rotate(calc(var(--i) * 45deg)) translate(180px) rotate(calc(var(--i) * -45deg));
+        }
+
+        .menu-item:hover {
+            transform: rotate(calc(var(--i) * 45deg)) translate(180px) rotate(calc(var(--i) * -45deg)) scale(1.2);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+        }
+
+        .full-moon { background: white; }
+        .waxing-gibbous { background: rgba(240, 240, 240, 0.8); }
+        .first-quarter { background: rgba(200, 200, 200, 0.8); }
+        .waxing-crescent { background: rgba(160, 160, 160, 0.8); }
+        .new-moon { background: rgba(100, 100, 100, 0.8); }
+        .waning-crescent { background: rgba(160, 160, 160, 0.8); }
+        .last-quarter { background: rgba(200, 200, 200, 0.8); }
+        .waning-gibbous { background: rgba(240, 240, 240, 0.8); }
+    </style>
+</head>
+<body class="bg-black min-h-screen flex items-center justify-center">
+    <div class="menu relative w-40 h-40 rounded-full bg-white shadow-xl flex items-center justify-center cursor-pointer hover:scale-110 transition duration-500 ease-in-out nav">
+        <img src="https://cdn.dribbble.com/userupload/22796255/file/original-c37de1bfc6107d463cd7d30ed33654a2.gif" alt="" class="rounded-full shadow-md">
+        
+        <a href="/" class="menu-item full-moon text-gray-900 font-bold" style="--i: 0;color: black;">Home</a>
+        <a href="/about" class="menu-item waxing-gibbous text-gray-900" style="--i: 1;color: black;">About</a>
+        <a href="#services" class="menu-item first-quarter" style="--i: 2;color: black;">Services</a>
+        <a href="/profile" class="menu-item waxing-crescent" style="--i: 3;">Portfolio</a>
+        <a href="/contact" class="menu-item new-moon" style="--i: 4;">Contact</a>
+        <a href="/blog" class="menu-item waning-crescent" style="--i: 5;">Blog</a>
+        <a href="#team" class="menu-item last-quarter" style="--i: 6;">Team</a>
+        <a href="#careers" class="menu-item waning-gibbous" style="--i: 7;">Careers</a>
+    </div>
+</body>
+</html>

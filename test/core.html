@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Verse - Generator</title>
+    <link rel="shortcut icon" href="https://icons.veryicon.com/png/o/education-technology/artificial-intelligence-2/mtsai-video-ai.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .form-bg {
+            background-image: linear-gradient(to top, #869191 -10%, #33312a 100%);
+        }
+        body {
+            background-image: url('https://t3.ftcdn.net/jpg/04/46/57/54/360_F_446575458_PyACzccqafiIcvAV6arQcynZpVKTqVVk.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="bg-gray-800 text-gray-800 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-4xl">
+        <h1 class="text-3xl font-bold text-center mb-6 text-gray-800">AI Video Generator</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Input Section -->
+            <div class="space-y-4">
+                <div>
+                    <label class="block font-medium mb-2">Media Type</label>
+                    <select id="mediaType" class="w-full border p-2 rounded">
+                        <option value="gif">GIF</option>
+                        <option value="video">Video</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block font-medium mb-2">Prompt</label>
+                    <textarea id="prompt" rows="3" class="w-full border p-2 rounded" placeholder="Describe what you want to generate..."></textarea>
+                </div>
+                
+                <div class="flex space-x-2">
+                    <button onclick="suggestPrompt()" class="flex-1 bg-gray-600 hover:bg-gray-700 text-white py-2 rounded">
+                        Suggest Prompt
+                    </button>
+                    <button onclick="generateMedia()" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded">
+                        Generate
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Output Section -->
+            <div class="bg-gray-100 rounded-lg p-4 flex flex-col items-center justify-center min-h-[300px]">
+                <div id="loading" class="hidden text-center">
+                    <div class="animate-spin rounded-full h-12 w-12 border-t-4 border-b-4 border-blue-600 mx-auto"></div>
+                    <p class="text-gray-600 mt-3">Generating your media...</p>
+                </div>
+                
+                <div id="result" class="hidden w-full text-center">
+                    <h2 class="text-xl font-semibold mb-3">Your Generated Media</h2>
+                    <div id="output" class="mb-4"></div>
+                    <a id="downloadBtn" href="#" download class="inline-block bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">
+                        Download
+                    </a>
+                </div>
+                
+                <div id="error" class="hidden text-red-600 text-center"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

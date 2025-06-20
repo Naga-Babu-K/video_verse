@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Support - Video verse</title>
+    <link rel="shortcut icon" href="https://icons.veryicon.com/png/o/education-technology/artificial-intelligence-2/mtsai-video-ai.png" type="image/x-icon">
+  
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+          body{
+      background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-D3VzYS-6kZXFs7Vg90AcEQ8TRsCtLm50wg&s ');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
+</head>
+<body class="bg-gray-100">
+  <!-- Navbar -->
+  <nav class=" p-4 shadow-md">
+    <div class="max-w-screen-xl px-16 mx-auto flex justify-between items-center">
+      <h1 class="text-white text-2xl font-semibold"><a href="/" class="text-white">Video verse</a></h1>
+      <div class="flex space-x-4">
+        <a href="/start" class="text-white text-sm   duration-300 ease-in-out hover:bg-yellow-500 px-4 py-2 rounded">Home</a>
+          
+        <a href="/profile" class="text-white text-sm   duration-300 ease-in-out hover:bg-yellow-500 px-4 py-2 rounded">Profile</a>
+          <% if (user && user.role !== 'user') { %>  
+          <a href="/admin" class="text-white text-sm border-b  duration-300 ease-in-out hover:text-yellow-400 px-4 py-2 rounded">⚡Admin Dashboard </a>
+       <% } %>
+      
+       <a href="/about" class="text-white text-sm   duration-300 ease-in-out hover:bg-yellow-500 px-4 py-2 rounded">about</a>
+      
+       <a href="/contact" class="text-white text-sm   duration-300 ease-in-out hover:bg-yellow-500 px-4 py-2 rounded">contact</a>
+      
+        <a href="/logout" class="text-white text-sm duration-300 ease-in-out hover:bg-red-500 px-4 py-2 rounded">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="flex gap-5">
+      <!-- Contact & Support Section -->
+  <section class="max-w-6xl mx-auto bg-black opacity-90 p-8 mt-6 rounded-lg shadow-lg flex gap-5">
+    
+    <div class="">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-6">Contact & Support</h2>
+    
+      <!-- Support Form -->
+      <form  action="/contact/send" method="POST" class="mb-8 text-2xl">
+        <label class="block mb-2 text-white font-medium">Your Name</label>
+        <input type="text" name="name" class="w-full border p-2 rounded mb-4" placeholder="Enter your name" required>
+        
+        <label class=" mb-2 text-white font-medium">Email</label>
+        <input type="email"  name="email" class="w-full border p-2 rounded mb-4" placeholder="Enter your email" required>
+        
+        <label class=" mb-2 text-white font-medium">Message</label>
+        <textarea name="message" class="w-full border p-2 rounded mb-4" rows="4" placeholder="Describe your issue" required></textarea>
+        
+        <button type="submit" class="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-700">Submit</button>
+      </form>
+    </div>
+    
+    <section class="max-w-sm mx-auto text-white p-4 mt-10 rounded-lg shadow-lg bg-gray-600">
+      <img class="rounded-full" src="https://img.freepik.com/free-vector/flat-design-illustration-customer-support_23-2148887720.jpg" width="480" alt="">
+      
+      <div class="m-2 p-4 border-1 border-black">
+        <p class="text-2xl mb-3 font-semibold border-b-3 border-black">Pls contact admin :</p>
+        <span class="text-xl">call : <a href="">7901239016</a></span> <br>
+        <span class="text-xl ">mail : <a href="">nadipallisudharshan</a></span> <br>
+        <span class="text-xl ">visit : <a href="">www.packetprep.com</a></span>
+      </div>
+    </section>
+  
+  </section>
+
+ 
+  </section>
+
+</body>
+</html>

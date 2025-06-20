@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - User List</title>
+  <link rel="shortcut icon" href="https://icons.veryicon.com/png/o/education-technology/artificial-intelligence-2/mtsai-video-ai.png" type="image/x-icon">
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/3680/3680366.png" type="image/x-icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body{
+        background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20190221/ourmid/pngtree-technological-sense-geometric-line-simple-image_19419.jpg');
+        background-size: cover;
+    }
+    .card{
+      background-image: url('https://w7.pngwing.com/pngs/929/974/png-transparent-blue-stripe-screenshot-blue-sky-daytime-sky-blue-background-blue-angle-other-thumbnail.png');
+      background-size: cover;
+    }
+    nav{
+      background-color: azure;
+      opacity: 90%;
+    }
+  </style>
+</head>
+<body class="">
+
+  <!-- Navbar -->
+  <nav class="p-4 shadow-md text-gray-900 ">
+    <div class="max-w-screen-xl px-16 mx-auto flex justify-between items-center">
+      <h1 class="text-gray-900 text-2xl font-semibold"><a href="/" class="text-gray-900">Video verse</a></h1>
+      <div class="flex space-x-4">
+        <a href="/start" class=" text-sm   duration-300 ease-in-out hover:bg-yellow-500 px-4 py-2 rounded">Home</a>
+          
+        <a href="/profile" class=" text-sm   duration-300 ease-in-out hover:bg-yellow-500 px-4 py-2 rounded">Profile</a>
+          <% if (user && user.role !== 'user') { %>  
+          <a href="/admin" class="text-white text-sm border-b  duration-300 ease-in-out hover:text-yellow-400 px-4 py-2 rounded">⚡Admin Dashboard </a>
+       <% } %>
+      
+       <a href="/about" class=" text-sm   duration-300 ease-in-out hover:bg-yellow-500 px-4 py-2 rounded">about</a>
+      
+       <a href="/contact" class=" text-sm   duration-300 ease-in-out hover:bg-yellow-500 px-4 py-2 rounded">contact</a>
+      
+        <a href="/logout" class=" text-sm duration-300 ease-in-out hover:bg-red-500 px-4 py-2 rounded">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- Admin Section: User List -->
+  <section class="max-w-screen-xl px-20 py-10 mx-auto">
+    <h1 class="text-3xl font-semibold mb-8 text-gray-100">Admin - User List</h1>
+  
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <% users.forEach(user => { %>
+        <div class="bg-blue-100 rounded-lg shadow-md p-6 flex justify-between items-center card">
+          <div> 
+            <h2 class="text-2xl font-semibold text-dark mb-4"><%= user.name %></h2>
+            <ul class="text-yellow-800 font-bold">
+              <li><span class="text-gray-800 font-semibold">Email:</span> <%= user.email %></li>
+              <li><span class="text-gray-800 font-semibold">Phone:</span> <%= user.phone %></li>
+              <li><span class="text-gray-800 font-semibold">Role:</span> <%= user.role %></li>
+              <li><span class="text-gray-800 font-semibold">Gender:</span> <%= user.gender %></li>
+              <li><span class="text-gray-800 font-semibold">Location:</span> <%= user.location %></li>
+            </ul>
+          </div>
+          
+          <!-- Analytics -->
+          <div class="relative w-36 h-36 mt-6 mx-auto">
+            
+          </div>
+  
+        </div>
+      <% }) %>
+    </div>
+  </section>
+  
+</body>
+</html>
